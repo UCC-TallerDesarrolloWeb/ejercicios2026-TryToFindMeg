@@ -4,7 +4,7 @@
 - María Emilia **García** 
 - 19 años 
 - Lic. en Bioinformática 
-:stuck_out_tongue_closed_eyes:
+😝
 
 1. Item 1
 2. Item 2
