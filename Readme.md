@@ -21,9 +21,9 @@
 -  [X] Listas
 -  [X] Link
 -  [X] Tablas I
--  [ ] Tablas II
--  [ ] Tablas III
--  [ ] Tablas VI
+-  [X] Tablas II
+-  [X] Tablas III
+-  [X] Tablas VI
 -  [ ] Comentarios
 -  [ ] Formulario
 -  [ ] Accesibilidad
