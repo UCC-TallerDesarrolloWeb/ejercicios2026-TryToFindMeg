@@ -19,7 +19,7 @@
 -  [X] Secciones
 -  [X] Títulos
 -  [X] Listas
--  [ ] Link
+-  [X] Link
 -  [ ] Tablas I
 -  [ ] Tablas II
 -  [ ] Tablas III
