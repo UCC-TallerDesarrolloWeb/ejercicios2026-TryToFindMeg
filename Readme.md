@@ -20,7 +20,7 @@
 -  [X] Títulos
 -  [X] Listas
 -  [X] Link
--  [ ] Tablas I
+-  [X] Tablas I
 -  [ ] Tablas II
 -  [ ] Tablas III
 -  [ ] Tablas VI
