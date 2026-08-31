@@ -21,63 +21,79 @@
 
 <form name="Suscripción"> 
     <p> 
-       Nombre: <input type="text" name="nombre" placeholder="Ingrese su Nombre">
+       <label for="nombre">Nombre:</label> 
+       <input type="text" name="nombre" placeholder="Ingrese su Nombre">
     </p>
 
     <p> 
-        Apellido: <input type="text" name="apellido" placeholder="Ingrese su Apellido">
+        <label for="apellido">Apellido:</label> 
+        <input type="text" name="apellido" placeholder="Ingrese su Apellido">
     </p>
 
     <p> 
-        Sexo: 
-        Masculino: <input type="radio" name="sexo" value="Masculino"> 
-        Femenino: <input type="radio" name="sexo" value="Femenino">
+        Sexo
+        <label for="sexo">Masculino:</label> 
+        <input type="radio" name="sexo" value="Masculino"> 
+
+        <label for="sexo">Femenino:</label> 
+        <input type="radio" name="sexo" value="Femenino">
     </p>
 
     <p>
-        Edad: <input type="number" name="edad" placeholder="Ingrese su Edad">
+        <label for="edad">Edad:</label> 
+        <input type="number" name="edad" placeholder="Ingrese su Edad">
     </p>
 
     <p>
-        Email: <input type="email" name="email" placeholder="Ingrese su Email">
+        <label for="email">Email:</label>    
+        <input type="email" name="email" placeholder="Ingrese su Email">
     </p>
 
     <p>
-        Usuario: <input type="text" name="usuario" placeholder="Ingrese su Usuario">
+        <label for="usuario">Usuario:</label> 
+        <input type="text" name="usuario" placeholder="Ingrese su Usuario">
     </p>
 
     <p>
-        Password: <input type="password" name="password" placeholder="Ingrese su Password">
+        <label for="password">Password:</label> 
+        <input type="password" name="password" placeholder="Ingrese su Password">
     </p>
 
     <p>
-        Confirmar Password: <input type="password" name="confirmar_password" placeholder="Confirme su Password">
+        <label for=" confirmar password">Password:</label> 
+        <input type="password" name="confirmar_password" placeholder="Confirme su Password">
     </p>
 
     <p>
         Tipo de servicio: 
+        <label for="tipo_servicio">Seleccione el tipo de servicio:</label>
         <select name="tipo_servicio">
             <option value="free">Free</option>
             <option value="standard">Standard</option>
             <option value="premium">Premium</option>
-        </select>
+        </select>g
     </p>
 
     <p>
         Tema:
+        <label for="tema">Política</label>
         <input type="checkbox" name="tema" value="Politica"> Política
+        <label for="tema">Negocios</label>
         <input type="checkbox" name="tema" value="Negocios"> Negocios
+        <label for="tema">Tecnología</label>
         <input type="checkbox" name="tema" value="Tecnologia"> Tecnología
+        <label for="tema">Salud</label>
         <input type="checkbox" name="tema" value="Salud"> Salud
     </p>
 
     <p> 
-        Agregue un comentario:
+        <label for="comentario">Agregue un Comentario:</label>
         <textarea name="comentario" placeholder="Ingrese su Comentario..."></textarea>
     </p>
 
     <p>
-        <button>
+        <label for="enviar">Boton de Enviar:</label>       
+        <button name="enviar" id="enviar">
             Boton de Enviar
         </button>
     </p>
