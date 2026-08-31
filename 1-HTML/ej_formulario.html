@@ -20,83 +20,98 @@
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
 
 <form name="Suscripción"> 
-    <p> 
-       <label for="nombre">Nombre:</label> 
-       <input type="text" name="nombre" placeholder="Ingrese su Nombre">
-    </p>
+    <fieldset>
+        <legend>Datos Personales</legend>
+        <p> 
+        <label for="nombre">Nombre:</label> 
+        <input type="text" name="nombre" placeholder="Ingrese su Nombre">
+        </p>
 
-    <p> 
-        <label for="apellido">Apellido:</label> 
-        <input type="text" name="apellido" placeholder="Ingrese su Apellido">
-    </p>
+        <p> 
+            <label for="apellido">Apellido:</label> 
+            <input type="text" name="apellido" placeholder="Ingrese su Apellido">
+        </p>
 
-    <p> 
-        Sexo
-        <label for="sexo">Masculino:</label> 
-        <input type="radio" name="sexo" value="Masculino"> 
+        <p> 
+            Sexo
+            <label for="sexo">Masculino:</label> 
+            <input type="radio" name="sexo" value="Masculino"> 
 
-        <label for="sexo">Femenino:</label> 
-        <input type="radio" name="sexo" value="Femenino">
-    </p>
+            <label for="sexo">Femenino:</label> 
+            <input type="radio" name="sexo" value="Femenino">
+        </p>
 
-    <p>
-        <label for="edad">Edad:</label> 
-        <input type="number" name="edad" placeholder="Ingrese su Edad">
-    </p>
+        <p>
+            <label for="edad">Edad:</label> 
+            <input type="number" name="edad" placeholder="Ingrese su Edad">
+        </p>
 
-    <p>
-        <label for="email">Email:</label>    
-        <input type="email" name="email" placeholder="Ingrese su Email">
-    </p>
+        <p>
+            <label for="email">Email:</label>    
+            <input type="email" name="email" placeholder="Ingrese su Email">
+        </p>
+    </fieldset>
 
-    <p>
-        <label for="usuario">Usuario:</label> 
-        <input type="text" name="usuario" placeholder="Ingrese su Usuario">
-    </p>
+    <fieldset>
+        <legend>Datos de la Cuenta</legend>
+        <p>
+            <label for="usuario">Usuario:</label> 
+            <input type="text" name="usuario" placeholder="Ingrese su Usuario">
+        </p>
 
-    <p>
-        <label for="password">Password:</label> 
-        <input type="password" name="password" placeholder="Ingrese su Password">
-    </p>
+        <p>
+            <label for="password">Password:</label> 
+            <input type="password" name="password" placeholder="Ingrese su Password">
+        </p>
 
-    <p>
-        <label for=" confirmar password">Password:</label> 
-        <input type="password" name="confirmar_password" placeholder="Confirme su Password">
-    </p>
+        <p>
+            <label for=" confirmar password">Password:</label> 
+            <input type="password" name="confirmar_password" placeholder="Confirme su Password">
+        </p>
+    </fieldset> 
 
-    <p>
-        Tipo de servicio: 
-        <label for="tipo_servicio">Seleccione el tipo de servicio:</label>
-        <select name="tipo_servicio">
-            <option value="free">Free</option>
-            <option value="standard">Standard</option>
-            <option value="premium">Premium</option>
-        </select>g
-    </p>
+    <fieldset>
+        <legend>Datos de Interes</legend>
+        <p>
+            Tipo de servicio: 
+            <label for="tipo_servicio">Seleccione el tipo de servicio:</label>
+            <select name="tipo_servicio">
+                <option value="free">Free</option>
+                <option value="standard">Standard</option>
+                <option value="premium">Premium</option>
+            </select>g
+        </p>
 
-    <p>
-        Tema:
-        <label for="tema">Política</label>
-        <input type="checkbox" name="tema" value="Politica"> Política
-        <label for="tema">Negocios</label>
-        <input type="checkbox" name="tema" value="Negocios"> Negocios
-        <label for="tema">Tecnología</label>
-        <input type="checkbox" name="tema" value="Tecnologia"> Tecnología
-        <label for="tema">Salud</label>
-        <input type="checkbox" name="tema" value="Salud"> Salud
-    </p>
+        <p>
+            Tema:
+            <label for="tema">Política</label>
+            <input type="checkbox" name="tema" value="Politica"> Política
+            <label for="tema">Negocios</label>
+            <input type="checkbox" name="tema" value="Negocios"> Negocios
+            <label for="tema">Tecnología</label>
+            <input type="checkbox" name="tema" value="Tecnologia"> Tecnología
+            <label for="tema">Salud</label>
+            <input type="checkbox" name="tema" value="Salud"> Salud
+        </p>
+    </fieldset> 
 
-    <p> 
-        <label for="comentario">Agregue un Comentario:</label>
-        <textarea name="comentario" placeholder="Ingrese su Comentario..."></textarea>
-    </p>
+    <fieldset>
+        <legend>Comentario</legend>
+        <p> 
+            <label for="comentario">Agregue un Comentario:</label>
+            <textarea name="comentario" placeholder="Ingrese su Comentario..."></textarea>
+        </p>
+    </fieldset>
 
-    <p>
-        <label for="enviar">Boton de Enviar:</label>       
-        <button name="enviar" id="enviar">
-            Boton de Enviar
-        </button>
-    </p>
+    <fieldset>
+        <legend>Enviar Archivo</legend>
+        <p>
+            <label for="enviar">Boton de Enviar:</label>       
+            <button name="enviar" id="enviar">
+                Boton de Enviar
+            </button>
+        </p>
+    </fieldset> 
 
 </form>
 
