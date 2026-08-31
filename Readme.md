@@ -32,7 +32,7 @@
 ### CSS
 -  [X] Propiedades tipográficas
 -  [X] Incrustado
--  [ ] Estilo con Descendientes
+-  [X] Estilo con Descendientes
 -  [ ] Pseudo Clases
 -  [ ] CV
 -  [ ] Backgrounds
