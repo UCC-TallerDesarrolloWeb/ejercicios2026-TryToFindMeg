@@ -1,0 +1,24 @@
+        .main_style{
+            text-align: center;
+            font-family: "Betania Patmos", cursive;
+            background: linear-gradient(to right, rgb(228, 151, 92), rgb(228, 110, 110));
+        }
+
+        div{
+            border: 3px solid rgba(108, 18, 18, 0.868);
+            margin: 15px;
+            padding: 10px 25px 12px;
+            background-color: rgba(221, 154, 154, 0.315);
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgb(152, 93, 93);
+        }
+
+        #user{
+            width: 9.3%;
+            float: left;
+            border-radius: 50%;
+        }
+
+        h3{
+            text-shadow: 1px 3px rgb(150, 100, 100);
+        }
