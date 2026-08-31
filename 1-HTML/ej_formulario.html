@@ -18,26 +18,71 @@
     https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
 
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
-Nombre:
-Apellido:
-Sexo: Masculino Femenino
-Edad:
-Email:
-Usuario:
-Password:
-Confirmar Password:
 
-Tipo de servicio: Free / Standard / Premium
-Tema:
-Política
-Negocios
-Tecnología
-Salud
+<form name="Suscripción"> 
+    <p> 
+       Nombre: <input type="text" name="nombre" placeholder="Ingrese su Nombre">
+    </p>
 
-Agregue un comentario:
+    <p> 
+        Apellido: <input type="text" name="apellido" placeholder="Ingrese su Apellido">
+    </p>
 
-Boton de Enviar
+    <p> 
+        Sexo: 
+        Masculino: <input type="radio" name="sexo" value="Masculino"> 
+        Femenino: <input type="radio" name="sexo" value="Femenino">
+    </p>
 
+    <p>
+        Edad: <input type="number" name="edad" placeholder="Ingrese su Edad">
+    </p>
+
+    <p>
+        Email: <input type="email" name="email" placeholder="Ingrese su Email">
+    </p>
+
+    <p>
+        Usuario: <input type="text" name="usuario" placeholder="Ingrese su Usuario">
+    </p>
+
+    <p>
+        Password: <input type="password" name="password" placeholder="Ingrese su Password">
+    </p>
+
+    <p>
+        Confirmar Password: <input type="password" name="confirmar_password" placeholder="Confirme su Password">
+    </p>
+
+    <p>
+        Tipo de servicio: 
+        <select name="tipo_servicio">
+            <option value="free">Free</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+        </select>
+    </p>
+
+    <p>
+        Tema:
+        <input type="checkbox" name="tema" value="Politica"> Política
+        <input type="checkbox" name="tema" value="Negocios"> Negocios
+        <input type="checkbox" name="tema" value="Tecnologia"> Tecnología
+        <input type="checkbox" name="tema" value="Salud"> Salud
+    </p>
+
+    <p> 
+        Agregue un comentario:
+        <textarea name="comentario" placeholder="Ingrese su Comentario..."></textarea>
+    </p>
+
+    <p>
+        <button>
+            Boton de Enviar
+        </button>
+    </p>
+
+</form>
 
 </body>
 </html>
