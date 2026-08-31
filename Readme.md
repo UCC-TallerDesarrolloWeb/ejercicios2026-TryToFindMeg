@@ -31,7 +31,7 @@
 
 ### CSS
 -  [X] Propiedades tipográficas
--  [ ] Incrustado
+-  [X] Incrustado
 -  [ ] Estilo con Descendientes
 -  [ ] Pseudo Clases
 -  [ ] CV
