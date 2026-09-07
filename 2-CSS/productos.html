@@ -5,7 +5,7 @@
         <link href="catalogo.css" type="text/css" rel="stylesheet">
     </head>
     <body class="grid-container">
-        <header class="item_1"
+        <header class="item_1">
             Catalogo de Productos
         </header>
 
@@ -14,7 +14,39 @@
         </nav>
 
         <aside class="item_3">
-            Links de Productos
+            <form name="filtros" id="filtrer">
+                <fieldset>
+                    <legend>Buscador</legend>
+                    <label for="search">Buscar:</label>
+                    <input type="text" id="search" name="search" placeholder="Buscar productos...">
+                </fieldset>
+                <fieldset>
+                    <legend>Precios</legend>
+                    <p>
+                        <label for="price-min">Minimo:</label>
+                        <input type="number" id="price-min" name="price-min" min="0">
+                    </p>
+                    <p>
+                        <label for="price-max">Maximo:</label>
+                        <input type="number" id="price-max" name="price-max" min="0">
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Tipo de Productos</legend>
+                    <p>
+                        <input type="checkbox" id="protectores" name="tipo" value="protectores">
+                        <label for="protectores">Protectores</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="entrenamiento" name="tipo" value="entrenamiento">
+                        <label for="entrenamiento">Entrenamiento</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="dobok" name="tipo" value="dobok">
+                        <label for="dobok">Dobok</label>
+                    </p>
+                </fieldset>
+            </form>
         </aside>
 
         <main class="item_4">

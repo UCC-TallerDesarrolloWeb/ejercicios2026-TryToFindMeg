@@ -43,6 +43,5 @@ main{
         'aside main main main'
         'footer footer footer footer';
     grid-gap: 10px;
-    background-color: #a0a1a3;
     padding: 10px;
 }
