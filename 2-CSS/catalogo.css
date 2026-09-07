@@ -13,7 +13,36 @@ main{
             width: 100%;
         }
     }
+}
 
+.item_1{
+    grid-area: header;
+}
 
+.item_2{
+    grid-area: nav;
+}
 
+.item_3{
+    grid-area: aside;
+}
+
+.item_4{
+    grid-area: main;
+}
+
+.item_5{
+    grid-area: footer;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-areas:
+        'header header header header'
+        'nav nav nav nav'
+        'aside main main main'
+        'footer footer footer footer';
+    grid-gap: 10px;
+    background-color: #a0a1a3;
+    padding: 10px;
 }
