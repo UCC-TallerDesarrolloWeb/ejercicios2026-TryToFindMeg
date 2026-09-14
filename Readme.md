@@ -26,24 +26,24 @@
 -  [X] Tablas IV
 -  [X] Comentarios
 -  [X] Formulario
--  [ ] Accesibilidad
--  [ ] Multimedia
+-  [X] Accesibilidad
+-  [X] Multimedia
 
 ### CSS
--  [ ] Propiedades tipográficas
--  [ ] Incrustado
--  [ ] Estilo con Descendientes
--  [ ] Pseudo Clases
--  [ ] CV
--  [ ] Backgrounds
+-  [X] Propiedades tipográficas
+-  [X] Incrustado
+-  [X] Estilo con Descendientes
+-  [X] Pseudo Clases
+-  [X] CV
+-  [X] Backgrounds
 -  [ ] Position
--  [ ] 2 Columnas
--  [ ] Grid
--  [ ] grid-areas
--  [ ] Mejora
--  [ ] Transitions
--  [ ] Viewport
--  [ ] Responsive
+-  [X] 2 Columnas
+-  [X] Grid
+-  [X] grid-areas
+-  [X] Mejora
+-  [X] Transitions
+-  [X] Viewport
+-  [X] Responsive
 
 ## Unidad 3: JavaScript y ES6+
 
