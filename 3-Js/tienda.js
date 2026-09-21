@@ -65,14 +65,18 @@ const productos = [
 /**
  * Descripción: Muestra un modal con información del producto seleccionado.
  * @method mostrarModal
+ * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
-mostrarModal = () => {
+mostrarModal = (num) => {
+  document.getElementById("nombre-producto").innerText = productos[num].nombre;
+  document.getElementById("descripcion-producto").innerText = productos[num].description;
   document.getElementById("modal").style.display = "block";
 }
 
 /**
  * Descripción: Cierra el modal que muestra información del producto seleccionado.
  * @method cerrarModal
+ * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
 cerrarModal = () => {
   document.getElementById("modal").style.display = "none";
@@ -85,11 +89,11 @@ cerrarModal = () => {
 mostrarCatalogo = () => {
   let contenido = "";
 
-  productos.forEach((producto) => {
+  productos.forEach((producto, id) => {
     contenido += `<div>
                     <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}" >
                     <h3>${producto.nombre}</h3>
-                    <button type="button" onclick="mostrarModal()" > Ver detalle de Producto</button>
+                    <button type="button" onclick="mostrarModal(${id})" > Ver detalle de Producto</button>
                   </div>`
   });
 
