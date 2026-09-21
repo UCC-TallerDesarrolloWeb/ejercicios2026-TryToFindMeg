@@ -77,3 +77,58 @@ mostrarOcultarDiv = (valor) => {
     }
     */
 }
+
+/**
+ * Descripción: Suma de dos números ingresados por el usuario.
+ * @method sumar
+ */
+sumar = () => {
+    let sum1, sum2;
+
+    sum1 = Number(document.getElementById("nums1").value);
+    sum2 = Number(document.getElementById("nums2").value);
+
+    document.getElementById("totalS").value = sum1 + sum2;
+}
+
+
+/**
+ * Descripción: Resta de dos números ingresados por el usuario.
+ * @method restar
+ */
+restar = () => {
+    let res1, res2;
+
+    res1 = Number(document.getElementById("numr1").value);
+    res2 = Number(document.getElementById("numr2").value);
+
+    document.getElementById("totalR").value = res1 - res2;
+}
+
+
+/**
+ * Descripción: Multiplicación de dos números ingresados por el usuario.
+ * @method multiplicar
+ */
+multiplicar = () => {
+    let mul1, mul2;
+
+    mul1 = Number(document.getElementById("numm1").value);
+    mul2 = Number(document.getElementById("numm2").value);
+
+    document.getElementById("totalM").value = mul1 * mul2;
+}
+
+
+/**
+ * Descripción: División de dos números ingresados por el usuario.
+ * @method dividir
+ */
+dividir = () => {
+    let div1, div2;
+
+    div1 = Number(document.getElementById("numd1").value);
+    div2 = Number(document.getElementById("numd2").value);
+
+    document.getElementById("totalD").value = div1 / div2;
+}
