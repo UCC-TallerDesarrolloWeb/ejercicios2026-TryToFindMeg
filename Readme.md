@@ -49,7 +49,7 @@
 
 -  [X] Hola Mundo!
 -  [X] Conversor de Unidades
--  [ ] Documentación
+-  [X] Documentación
 -  [ ] Grados a Radianes
 -  [ ] Refactorización
 -  [ ] Mostrar/Ocultar div
