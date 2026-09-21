@@ -78,3 +78,20 @@ cerrarModal = () => {
   document.getElementById("modal").style.display = "none";
 }
 
+/**
+ * Descripción: Muestra el catálogo de productos en la página web.
+ * @method mostrarCatalogo
+ */
+mostrarCatalogo = () => {
+  let contenido = "";
+
+  productos.forEach((producto) => {
+    contenido += `<div>
+                    <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}" >
+                    <h3>${producto.nombre}</h3>
+                    <button type="button" onclick="mostrarModal()" > Ver detalle de Producto</button>
+                  </div>`
+  });
+
+  document.getElementById("catalogo").innerHTML = contenido;
+}
