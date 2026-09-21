@@ -50,8 +50,8 @@
 -  [X] Hola Mundo!
 -  [X] Conversor de Unidades
 -  [X] Documentación
--  [ ] Grados a Radianes
--  [ ] Refactorización
+-  [X] Grados a Radianes
+-  [X] Refactorización
 -  [ ] Mostrar/Ocultar div
 -  [ ] Mostrar/Ocultar Dialog
 -  [ ] Operaciones Matemáticas
