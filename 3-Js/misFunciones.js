@@ -5,7 +5,6 @@
  * @param {numero} valor - valor ingresado por el usuario 
  * @return Valor que retorna
  */
-
 convertirUnidades = (id, valor) => {
     let metros, pulgadas, pies, yardas;
 
@@ -59,4 +58,22 @@ function convertirGR(id) {
     }
     document.getElementById("grados").value = grad;
     document.getElementById("radianes").value = rad;
+}
+
+/**
+ * Descripción: Mostrar u ocultar un div en el HTML.
+ * @method mostrarOcultarDiv
+ * @param {string} valor - valor del radio button seleccionado por el usuario
+ */
+mostrarOcultarDiv = (valor) => {
+    const displayDiv = valor == "val_mostrar" ? "block" : "none";
+    document.getElementById("unDiv").style.display = displayDiv;
+    
+    /*
+    if(valor=="val_mostrar"){
+        document.getElementById("unDiv").style.display = "block";
+    }else{
+        document.getElementById("unDiv").style.display = "none";
+    }
+    */
 }
