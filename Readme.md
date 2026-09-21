@@ -53,7 +53,7 @@
 -  [X] Grados a Radianes
 -  [X] Refactorización
 -  [X] Mostrar/Ocultar div
--  [ ] Mostrar/Ocultar Dialog
+-  [X] Mostrar/Ocultar Dialog
 -  [ ] Operaciones Matemáticas
 -  [ ] Conversor de Unidades II
 -  [ ] Operaciones Matemáticas II
