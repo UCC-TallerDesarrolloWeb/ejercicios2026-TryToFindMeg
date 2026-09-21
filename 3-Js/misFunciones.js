@@ -1,3 +1,4 @@
+/* Conversor de Undidades */
 /**
  * Descripción: Conversión de unidades de medida (metros, pies, pulgadasy yardas)
  * @method convertirUnidades
@@ -7,6 +8,8 @@
  */
 convertirUnidades = (id, valor) => {
     let metros, pulgadas, pies, yardas;
+
+    valor = valor.replace(",",".");
 
     if(isNaN(valor)) {
         alert("Se ingreso un valor incorrecto: " +id);
@@ -36,12 +39,13 @@ convertirUnidades = (id, valor) => {
         pies = valor * 3;
     }
 
-    document.getElementById("metro").value = metros;
-    document.getElementById("pulgada").value = pulgadas;
-    document.getElementById("pie").value = pies;
-    document.getElementById("yarda").value = yardas;
+    document.getElementById("metro").value = Math.round(metros * 100) / 100;
+    document.getElementById("pulgada").value = Math.round(pulgadas * 100) / 100;
+    document.getElementById("pie").value = pies.toFixed(2);
+    document.getElementById("yarda").value = yardas.toFixed(2);
 }
 
+/* Conversor de Grados y Radianes */
 /**
  * Descripción: Conversión de grados a radianas y viceversa.
  * @method convertirGR
@@ -60,6 +64,7 @@ function convertirGR(id) {
     document.getElementById("radianes").value = rad;
 }
 
+/* Mostrar y ocultar un div en el HTML */
 /**
  * Descripción: Mostrar u ocultar un div en el HTML.
  * @method mostrarOcultarDiv
@@ -78,6 +83,7 @@ mostrarOcultarDiv = (valor) => {
     */
 }
 
+/* Funciones de operaciones matemáticas */
 /**
  * Descripción: Suma de dos números ingresados por el usuario.
  * @method sumar
@@ -132,3 +138,4 @@ dividir = () => {
 
     document.getElementById("totalD").value = div1 / div2;
 }
+
