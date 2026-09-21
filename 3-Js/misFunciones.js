@@ -94,7 +94,7 @@ sumar = () => {
     sum1 = Number(document.getElementById("nums1").value);
     sum2 = Number(document.getElementById("nums2").value);
 
-    document.getElementById("totalS").value = sum1 + sum2;
+    document.getElementById("totalS").innerText = sum1 + sum2;
 }
 
 
@@ -108,7 +108,7 @@ restar = () => {
     res1 = Number(document.getElementById("numr1").value);
     res2 = Number(document.getElementById("numr2").value);
 
-    document.getElementById("totalR").value = res1 - res2;
+    document.getElementById("totalR").innerText = res1 - res2;
 }
 
 
@@ -122,7 +122,7 @@ multiplicar = () => {
     mul1 = Number(document.getElementById("numm1").value);
     mul2 = Number(document.getElementById("numm2").value);
 
-    document.getElementById("totalM").value = mul1 * mul2;
+    document.getElementById("totalM").innerText = mul1 * mul2;
 }
 
 
@@ -136,6 +136,5 @@ dividir = () => {
     div1 = Number(document.getElementById("numd1").value);
     div2 = Number(document.getElementById("numd2").value);
 
-    document.getElementById("totalD").value = div1 / div2;
+    document.getElementById("totalD").innerText = div1 / div2;
 }
-
