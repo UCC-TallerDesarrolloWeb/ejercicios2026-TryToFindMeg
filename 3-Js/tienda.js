@@ -67,122 +67,147 @@ const productos = [
  * @method mostrarModal
  * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
-mostrarModal = (num) => {
-  document.getElementById("nombre-producto").innerText = productos[num].nombre;
+function mostrarModal(num) {
+  document.getElementById("nombre-producto").innerText =
+    productos[num].nombre;
 
   document.getElementById("descripcion-producto").innerText =
     productos[num].description;
 
   document.getElementById("modal").style.display = "block";
-};
+}
 
 /**
- * Descripción: Cierra el modal que muestra información del producto seleccionado.
+ * Descripción: Cierra el modal con información del producto.
  * @method cerrarModal
  */
-cerrarModal = () => {
+function cerrarModal() {
   document.getElementById("modal").style.display = "none";
-};
+}
 
 /**
- * Descripción: Muestra el catálogo de productos en la página web.
+ * Descripción: Muestra el catálogo con botones para consultar
+ * los detalles y agregar productos al carrito.
  * @method mostrarCatalogo
  */
-mostrarCatalogo = () => {
+function mostrarCatalogo() {
   let contenido = "";
 
   productos.forEach((producto, id) => {
-    contenido += `<div>
-                    <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}">
-                    <h3>${producto.nombre}</h3>
+    contenido += `
+      <div>
+        <img
+          src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}"
+          alt="${producto.nombre}"
+        >
 
-                    <button 
-                      type="button" 
-                      onclick="mostrarModal(${id})">
-                      Ver detalle de Producto
-                    </button>
+        <h3>${producto.nombre}</h3>
 
-                    <button 
-                      type="button" 
-                      onclick="agregarAlCarrito(${id})">
-                      Agregar al Carrito
-                    </button>
-                  </div>`;
+        <button
+          type="button"
+          onclick="mostrarModal(${id})"
+        >
+          Ver detalle de Producto
+        </button>
+
+        <button
+          type="button"
+          onclick="agregarAlCarrito(${id})"
+        >
+          Agregar al Carrito
+        </button>
+      </div>
+    `;
   });
 
   document.getElementById("catalogo").innerHTML = contenido;
-};
+}
 
 /**
- * Descripción: Agrega un producto al carrito de compras.
+ * Descripción: Obtiene el carrito almacenado en localStorage.
+ * Si no existe, devuelve un arreglo vacío.
+ * @method obtenerCarrito
+ * @returns {number[]} Arreglo con los índices de los productos del carrito.
+ */
+function obtenerCarrito() {
+  return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+/**
+ * Descripción: Agrega un producto al carrito de compras
+ * y guarda los cambios en localStorage.
  * @method agregarAlCarrito
  * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
-agregarAlCarrito = (num) => {
+function agregarAlCarrito(num) {
+  const carrito = obtenerCarrito();
 
-  let carritoList = localStorage.getItem("carrito");
+  carrito.push(num);
 
-  console.log(carritoList);
-
-  if (carritoList == null) {
-
-    carritoList = [];
-
-  } else {
-
-    carritoList = JSON.parse(carritoList);
-
-  }
-
-  carritoList.push(num);
-
-  console.log(carritoList);
-
-  localStorage.setItem(
-    "carrito",
-    JSON.stringify(carritoList)
-  );
-};
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
 /**
- * Descripción: Muestra los productos agregados al carrito de compras.
+ * Descripción: Muestra los productos del carrito con un botón
+ * para eliminar cada elemento. Si está vacío, muestra un mensaje.
  * @method mostrarCarrito
  */
-mostrarCarrito = () => {
-
-  let carritoList = localStorage.getItem("carrito");
-
+function mostrarCarrito() {
+  const carrito = obtenerCarrito();
   let contenido = "";
 
-  if (carritoList == null) {
+  carrito.forEach((num, posicion) => {
+    const producto = productos[num];
 
-    document.getElementById("carrito").innerHTML =
-      "<p>No hay productos en el carrito</p>";
+    contenido += `
+      <div>
+        <img
+          src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}"
+          alt="${producto.nombre}"
+        >
 
-    return;
-  }
+        <h3>${producto.nombre}</h3>
 
-  carritoList = JSON.parse(carritoList);
+        <p>${producto.description}</p>
 
-  carritoList.forEach((num, id) => {
+        <p>Precio: $${producto.precio}</p>
 
-    contenido += `<div>
-
-                    <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${productos[num].imagen}">
-
-                    <h3>${productos[num].nombre}</h3>
-
-                    <p>
-                      ${productos[num].description}
-                    </p>
-
-                    <p>
-                      Precio: $${productos[num].precio}
-                    </p>
-
-                  </div>`;
-
+        <button
+          type="button"
+          onclick="eliminarProducto(${posicion})"
+        >
+          Eliminar producto
+        </button>
+      </div>
+    `;
   });
 
-  document.getElementById("carrito").innerHTML = contenido;
-};
+  document.getElementById("carrito").innerHTML =
+    contenido || "<p>No hay productos en el carrito.</p>";
+}
+
+/**
+ * Descripción: Vacía el carrito eliminándolo de localStorage
+ * y actualiza su visualización.
+ * @method vaciarCarrito
+ */
+function vaciarCarrito() {
+  localStorage.removeItem("carrito");
+  mostrarCarrito();
+}
+
+/**
+ * Descripción: Elimina un elemento según su posición dentro del carrito,
+ * guarda los cambios y actualiza su visualización.
+ * @method eliminarProducto
+ * @param {number} posicion - La posición del elemento que se eliminará del carrito.
+ */
+function eliminarProducto(posicion) {
+  const carrito = obtenerCarrito();
+
+  carrito.splice(posicion, 1);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  mostrarCarrito();
+}
