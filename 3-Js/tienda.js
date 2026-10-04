@@ -69,18 +69,20 @@ const productos = [
  */
 mostrarModal = (num) => {
   document.getElementById("nombre-producto").innerText = productos[num].nombre;
-  document.getElementById("descripcion-producto").innerText = productos[num].description;
+
+  document.getElementById("descripcion-producto").innerText =
+    productos[num].description;
+
   document.getElementById("modal").style.display = "block";
-}
+};
 
 /**
  * Descripción: Cierra el modal que muestra información del producto seleccionado.
  * @method cerrarModal
- * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
 cerrarModal = () => {
   document.getElementById("modal").style.display = "none";
-}
+};
 
 /**
  * Descripción: Muestra el catálogo de productos en la página web.
@@ -91,11 +93,96 @@ mostrarCatalogo = () => {
 
   productos.forEach((producto, id) => {
     contenido += `<div>
-                    <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}" >
+                    <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${producto.imagen}">
                     <h3>${producto.nombre}</h3>
-                    <button type="button" onclick="mostrarModal(${id})" > Ver detalle de Producto</button>
-                  </div>`
+
+                    <button 
+                      type="button" 
+                      onclick="mostrarModal(${id})">
+                      Ver detalle de Producto
+                    </button>
+
+                    <button 
+                      type="button" 
+                      onclick="agregarAlCarrito(${id})">
+                      Agregar al Carrito
+                    </button>
+                  </div>`;
   });
 
   document.getElementById("catalogo").innerHTML = contenido;
-}
+};
+
+/**
+ * Descripción: Agrega un producto al carrito de compras.
+ * @method agregarAlCarrito
+ * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
+ */
+agregarAlCarrito = (num) => {
+
+  let carritoList = localStorage.getItem("carrito");
+
+  console.log(carritoList);
+
+  if (carritoList == null) {
+
+    carritoList = [];
+
+  } else {
+
+    carritoList = JSON.parse(carritoList);
+
+  }
+
+  carritoList.push(num);
+
+  console.log(carritoList);
+
+  localStorage.setItem(
+    "carrito",
+    JSON.stringify(carritoList)
+  );
+};
+
+/**
+ * Descripción: Muestra los productos agregados al carrito de compras.
+ * @method mostrarCarrito
+ */
+mostrarCarrito = () => {
+
+  let carritoList = localStorage.getItem("carrito");
+
+  let contenido = "";
+
+  if (carritoList == null) {
+
+    document.getElementById("carrito").innerHTML =
+      "<p>No hay productos en el carrito</p>";
+
+    return;
+  }
+
+  carritoList = JSON.parse(carritoList);
+
+  carritoList.forEach((num, id) => {
+
+    contenido += `<div>
+
+                    <img src="https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/${productos[num].imagen}">
+
+                    <h3>${productos[num].nombre}</h3>
+
+                    <p>
+                      ${productos[num].description}
+                    </p>
+
+                    <p>
+                      Precio: $${productos[num].precio}
+                    </p>
+
+                  </div>`;
+
+  });
+
+  document.getElementById("carrito").innerHTML = contenido;
+};
