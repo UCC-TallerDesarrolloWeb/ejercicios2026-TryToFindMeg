@@ -1,69 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <title>Catálogo de Productos</title>
-        <link href="catalogo.css" type="text/css" rel="stylesheet">
-        <script type="text/javascript" src="tienda.js"></script>
-    </head>
-    <body class="grid-container" onload="mostrarCatalogo()">
-        <header class="item_1">
-            Catalogo de Productos
-        </header>
+  <head>
+    <title>Catálogo de Productos</title>
+    <link href="catalogo.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="tienda.js"></script>
+  </head>
+  <body class="grid-container" onload="mostrarCatalogo()">
+    <header class="item_1">Catalogo de Productos</header>
 
-        <nav class="item_2">
-            <a href="productos.html">Catalogo de Productos</a>
-            <a href="carrito.html">Carrito de Compras</a>
-        </nav>
+    <nav class="item_2">
+      <a href="productos.html">Catalogo de Productos</a>
+      <a href="carrito.html">Carrito de Compras</a>
+    </nav>
 
-        <aside class="item_3">
-            <form name="filtros" id="filtrer">
-                <fieldset>
-                    <legend>Buscador</legend>
-                    <label for="search">Buscar:</label>
-                    <input type="text" id="search" name="search" placeholder="Buscar productos...">
-                </fieldset>
-                <fieldset>
-                    <legend>Precios</legend>
-                    <p>
-                        <label for="price-min">Minimo:</label>
-                        <input type="number" id="price-min" name="price-min" min="0">
-                    </p>
-                    <p>
-                        <label for="price-max">Maximo:</label>
-                        <input type="number" id="price-max" name="price-max" min="0">
-                    </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Tipo de Productos</legend>
-                    <p>
-                        <input type="checkbox" id="protectores" name="tipo" value="protectores">
-                        <label for="protectores">Protectores</label>
-                    </p>
-                    <p>
-                        <input type="checkbox" id="entrenamiento" name="tipo" value="entrenamiento">
-                        <label for="entrenamiento">Entrenamiento</label>
-                    </p>
-                    <p>
-                        <input type="checkbox" id="dobok" name="tipo" value="dobok">
-                        <label for="dobok">Dobok</label>
-                    </p>
-                </fieldset>
-            </form>
-        </aside>
+    <aside class="item_3">
+      <form
+        name="filtros"
+        id="filtrer"
+        onsubmit="event.preventDefault()"
+        oninput="mostrarCatalogo()"
+        onchange="mostrarCatalogo()"
+      >
+        <fieldset>
+          <legend>Buscador</legend>
 
-        <dialog id="modal" class="modal">
-            <h2 id="nombre-producto"> Cabezal Cerrado</h2>
-            <p id="descripcion-producto">El cabezal cerrado es un equipo de protección utilizado en deportes de contacto, como el taekwondo y el boxeo. 
-            </p>
-            <button type="button" onclick="cerrarModal()">Cerrar</button>
-        </dialog>
+          <label for="search">Buscar:</label>
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Buscar productos..."
+          />
+        </fieldset>
 
-        <main class="item_4" id="catalogo">
-            
-        </main>
+        <fieldset>
+          <legend>Precios</legend>
 
-        <footer class="item_5">
-            Contacto
-        </footer>
-    </body>
+          <p>
+            <label for="price-min">Mínimo:</label>
+            <input
+              type="number"
+              id="price-min"
+              name="price-min"
+              min="0"
+              step="0.01"
+            />
+          </p>
+
+          <p>
+            <label for="price-max">Máximo:</label>
+            <input
+              type="number"
+              id="price-max"
+              name="price-max"
+              min="0"
+              step="0.01"
+            />
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Marca</legend>
+
+          <label for="marca">Seleccionar marca:</label>
+          <select id="marca" name="marca">
+            <option value="">Todas las marcas</option>
+            <option value="Gran Marc">Gran Marc</option>
+            <option value="Daedo">Daedo</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tipo de Productos</legend>
+
+          <p>
+            <input
+              type="checkbox"
+              id="protectores"
+              name="tipo"
+              value="protectores"
+            />
+            <label for="protectores">Protectores</label>
+          </p>
+
+          <p>
+            <input
+              type="checkbox"
+              id="entrenamiento"
+              name="tipo"
+              value="entrenamiento"
+            />
+            <label for="entrenamiento">Entrenamiento</label>
+          </p>
+
+          <p>
+            <input type="checkbox" id="dobok" name="tipo" value="dobok" />
+            <label for="dobok">Dobok</label>
+          </p>
+        </fieldset>
+
+        <button
+          type="button"
+          onclick="
+            this.form.reset();
+            mostrarCatalogo();
+          "
+        >
+          Limpiar filtros
+        </button>
+      </form>
+    </aside>
+
+    <dialog id="modal" class="modal">
+      <h2 id="nombre-producto">Cabezal Cerrado</h2>
+      <p id="descripcion-producto">
+        El cabezal cerrado es un equipo de protección utilizado en deportes de
+        contacto, como el taekwondo y el boxeo.
+      </p>
+      <button type="button" onclick="cerrarModal()">Cerrar</button>
+    </dialog>
+
+    <main class="item_4" id="catalogo"></main>
+
+    <footer class="item_5">Contacto</footer>
+  </body>
 </html>

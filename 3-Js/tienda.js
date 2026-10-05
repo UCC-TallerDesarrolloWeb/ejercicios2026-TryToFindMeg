@@ -86,14 +86,61 @@ function cerrarModal() {
 }
 
 /**
- * Descripción: Muestra el catálogo con botones para consultar
- * los detalles y agregar productos al carrito.
+ * Descripción: Filtra los productos por texto, rango de precios, marca
+ * y categoría, y muestra los resultados en el catálogo.
  * @method mostrarCatalogo
  */
 function mostrarCatalogo() {
+  const busqueda = document.getElementById("search")
+    .value.trim().toLowerCase();
+
+  const minimo = document.getElementById("price-min").value;
+  const maximo = document.getElementById("price-max").value;
+  const marca = document.getElementById("marca").value;
+
+  // Obtiene las categorías que el usuario seleccionó.
+  const categorias = Array.from(
+    document.querySelectorAll('input[name="tipo"]:checked')
+  ).map((checkbox) => checkbox.value);
+
+  // Conserva el índice original para que los botones de detalle
+  // y carrito sigan apuntando al producto correcto.
+  const lista = productos.map((producto, id) => ({
+    ...producto,
+    id: id,
+  }));
+
+  const productosFiltrados = lista.filter((producto) => {
+    const coincideTexto =
+      producto.nombre.toLowerCase().includes(busqueda) ||
+      producto.description.toLowerCase().includes(busqueda);
+
+    const coincideMinimo =
+      minimo === "" || producto.precio >= Number(minimo);
+
+    const coincideMaximo =
+      maximo === "" || producto.precio <= Number(maximo);
+
+    const coincideMarca =
+      marca === "" || producto.marca === marca;
+
+    // Si no hay categorías seleccionadas, permite todas.
+    const coincideCategoria =
+      categorias.length === 0 ||
+      categorias.includes(producto.categoria.toLowerCase());
+
+    return (
+      coincideTexto &&
+      coincideMinimo &&
+      coincideMaximo &&
+      coincideMarca &&
+      coincideCategoria
+    );
+  });
+
   let contenido = "";
 
-  productos.forEach((producto, id) => {
+  productosFiltrados.forEach((producto) => {
     contenido += `
       <div>
         <img
@@ -102,17 +149,19 @@ function mostrarCatalogo() {
         >
 
         <h3>${producto.nombre}</h3>
+        <p>Marca: ${producto.marca}</p>
+        <p>Precio: $${producto.precio}</p>
 
         <button
           type="button"
-          onclick="mostrarModal(${id})"
+          onclick="mostrarModal(${producto.id})"
         >
           Ver detalle de Producto
         </button>
 
         <button
           type="button"
-          onclick="agregarAlCarrito(${id})"
+          onclick="agregarAlCarrito(${producto.id})"
         >
           Agregar al Carrito
         </button>
@@ -120,7 +169,8 @@ function mostrarCatalogo() {
     `;
   });
 
-  document.getElementById("catalogo").innerHTML = contenido;
+  document.getElementById("catalogo").innerHTML =
+    contenido || "<p>No se encontraron productos con esos filtros.</p>";
 }
 
 /**
