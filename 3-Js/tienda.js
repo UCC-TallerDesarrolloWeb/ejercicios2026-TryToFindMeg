@@ -87,8 +87,8 @@ function cerrarModal() {
 
 /**
  * Descripción: Filtra los productos por texto, rango de precios, marca
- * y categoría. Muestra sus precios formateados y actualiza el contador
- * del carrito.
+ * y categoría. Aplica el orden seleccionado, muestra los precios
+ * formateados y actualiza el contador del carrito.
  * @method mostrarCatalogo
  */
 function mostrarCatalogo() {
@@ -104,7 +104,8 @@ function mostrarCatalogo() {
     document.querySelectorAll('input[name="tipo"]:checked')
   ).map((checkbox) => checkbox.value);
 
-  // Conserva el índice original de cada producto.
+  // Crea una copia y conserva el índice original de cada producto.
+  // Así, ordenar el catálogo no cambia las referencias del carrito.
   const lista = productos.map((producto, id) => ({
     ...producto,
     id: id,
@@ -138,9 +139,12 @@ function mostrarCatalogo() {
     );
   });
 
+  // Ordena los productos que cumplen los filtros.
+  const productosOrdenados = ordenarCatalogo(productosFiltrados);
+
   let contenido = "";
 
-  productosFiltrados.forEach((producto) => {
+  productosOrdenados.forEach((producto) => {
     contenido += `
       <div>
         <img
@@ -173,6 +177,37 @@ function mostrarCatalogo() {
     contenido || "<p>No se encontraron productos con esos filtros.</p>";
 
   actualizarContador();
+}
+
+/**
+ * Descripción: Ordena la lista recibida por precio o nombre según
+ * la opción seleccionada. Si no se selecciona un orden, conserva la lista.
+ * @method ordenarCatalogo
+ * @param {Object[]} lista - La lista de productos filtrados que se ordenará.
+ * @returns {Object[]} La lista de productos ordenada.
+ */
+function ordenarCatalogo(lista) {
+  const orden = document.getElementById("orden").value;
+
+  switch (orden) {
+    case "precio-asc":
+      lista.sort((a, b) => a.precio - b.precio);
+      break;
+
+    case "precio-desc":
+      lista.sort((a, b) => b.precio - a.precio);
+      break;
+
+    case "nombre-asc":
+      lista.sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+      break;
+
+    case "nombre-desc":
+      lista.sort((a, b) => b.nombre.localeCompare(a.nombre, "es"));
+      break;
+  }
+
+  return lista;
 }
 
 /**

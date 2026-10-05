@@ -64,7 +64,7 @@
 -  [X] Filter
 -  [X] Formatear Precio
 -  [X] Total y Cantidad de Productos
--  [ ] Ordenar el catálogo
+-  [X] Ordenar el catálogo
 
 ## Unidad 4: Funcionamiento del Navegador y Herramientas de Desarrollo
 -  [ ] Checkeo de accesiilidad: AXE

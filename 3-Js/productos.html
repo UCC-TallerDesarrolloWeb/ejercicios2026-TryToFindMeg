@@ -121,6 +121,32 @@
                     </p>
                 </fieldset>
 
+                <fieldset>
+                    <legend>Ordenar catálogo</legend>
+
+                    <label for="orden">Orden:</label>
+
+                    <select id="orden" name="orden">
+                        <option value="">Orden original</option>
+
+                        <option value="precio-asc">
+                            Precio: menor a mayor
+                        </option>
+
+                        <option value="precio-desc">
+                            Precio: mayor a menor
+                        </option>
+
+                        <option value="nombre-asc">
+                            Nombre: A-Z
+                        </option>
+
+                        <option value="nombre-desc">
+                            Nombre: Z-A
+                        </option>
+                    </select>
+                </fieldset>
+
                 <button
                     type="button"
                     onclick="this.form.reset(); mostrarCatalogo();"
