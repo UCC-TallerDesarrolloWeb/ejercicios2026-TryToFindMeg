@@ -87,7 +87,8 @@ function cerrarModal() {
 
 /**
  * Descripción: Filtra los productos por texto, rango de precios, marca
- * y categoría, y muestra los resultados en el catálogo.
+ * y categoría. Muestra sus precios formateados y actualiza el contador
+ * del carrito.
  * @method mostrarCatalogo
  */
 function mostrarCatalogo() {
@@ -98,13 +99,12 @@ function mostrarCatalogo() {
   const maximo = document.getElementById("price-max").value;
   const marca = document.getElementById("marca").value;
 
-  // Obtiene las categorías que el usuario seleccionó.
+  // Obtiene las categorías seleccionadas.
   const categorias = Array.from(
     document.querySelectorAll('input[name="tipo"]:checked')
   ).map((checkbox) => checkbox.value);
 
-  // Conserva el índice original para que los botones de detalle
-  // y carrito sigan apuntando al producto correcto.
+  // Conserva el índice original de cada producto.
   const lista = productos.map((producto, id) => ({
     ...producto,
     id: id,
@@ -124,7 +124,7 @@ function mostrarCatalogo() {
     const coincideMarca =
       marca === "" || producto.marca === marca;
 
-    // Si no hay categorías seleccionadas, permite todas.
+    // Sin categorías seleccionadas, permite todas.
     const coincideCategoria =
       categorias.length === 0 ||
       categorias.includes(producto.categoria.toLowerCase());
@@ -150,7 +150,7 @@ function mostrarCatalogo() {
 
         <h3>${producto.nombre}</h3>
         <p>Marca: ${producto.marca}</p>
-        <p>Precio: $${producto.precio}</p>
+        <p>Precio: ${formatearPrecio(producto.precio)}</p>
 
         <button
           type="button"
@@ -171,6 +171,8 @@ function mostrarCatalogo() {
 
   document.getElementById("catalogo").innerHTML =
     contenido || "<p>No se encontraron productos con esos filtros.</p>";
+
+  actualizarContador();
 }
 
 /**
@@ -184,8 +186,8 @@ function obtenerCarrito() {
 }
 
 /**
- * Descripción: Agrega un producto al carrito de compras
- * y guarda los cambios en localStorage.
+ * Descripción: Agrega una unidad del producto al carrito de compras,
+ * guarda los cambios en localStorage y actualiza el contador.
  * @method agregarAlCarrito
  * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
@@ -195,11 +197,13 @@ function agregarAlCarrito(num) {
   carrito.push(num);
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  actualizarContador();
 }
 
 /**
- * Descripción: Muestra los productos del carrito con un botón
- * para eliminar cada elemento. Si está vacío, muestra un mensaje.
+ * Descripción: Muestra los productos del carrito con sus precios formateados
+ * y un botón para eliminar cada elemento. Actualiza el contador de unidades.
  * @method mostrarCarrito
  */
 function mostrarCarrito() {
@@ -220,7 +224,7 @@ function mostrarCarrito() {
 
         <p>${producto.description}</p>
 
-        <p>Precio: $${producto.precio}</p>
+        <p>Precio: ${formatearPrecio(producto.precio)}</p>
 
         <button
           type="button"
@@ -234,6 +238,8 @@ function mostrarCarrito() {
 
   document.getElementById("carrito").innerHTML =
     contenido || "<p>No hay productos en el carrito.</p>";
+
+  actualizarContador();
 }
 
 /**
@@ -260,4 +266,33 @@ function eliminarProducto(posicion) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
   mostrarCarrito();
+}
+
+/**
+ * Descripción: Formatea un precio en pesos argentinos con separadores
+ * de miles y dos decimales.
+ * @method formatearPrecio
+ * @param {number} precio - El precio que se desea formatear.
+ * @returns {string} El precio formateado en pesos argentinos.
+ */
+function formatearPrecio(precio) {
+  return new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(precio);
+}
+
+/**
+ * Descripción: Actualiza el contador del enlace al carrito con la cantidad
+ * total de unidades almacenadas.
+ * @method actualizarContador
+ */
+function actualizarContador() {
+  const contador = document.getElementById("cantidad-carrito");
+
+  if (contador) {
+    contador.innerText = obtenerCarrito().length;
+  }
 }

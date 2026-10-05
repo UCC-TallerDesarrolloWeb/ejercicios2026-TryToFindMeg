@@ -62,7 +62,7 @@
 -  [X] Carrito de Compras con localstorage
 -  [X] Vaciar Carrito y Eliminar Producto
 -  [X] Filter
--  [ ] Formatear Precio
+-  [X] Formatear Precio
 -  [ ] Total y Cantidad de Productos
 -  [ ] Ordenar el catálogo
 
