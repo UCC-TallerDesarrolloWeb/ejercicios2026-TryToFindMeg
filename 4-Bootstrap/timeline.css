@@ -1,0 +1,21 @@
+/* Permite recorrer el timeline en pantallas pequeñas. */
+.timeline-scroll {
+    overflow-x: auto;
+}
+
+/* Mantiene espacio suficiente para las semanas y las tarjetas. */
+.timeline {
+    min-width: 800px;
+    background-color: white;
+}
+
+/* Define el tamaño de los avatares. */
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    font-size: 20px;
+}
