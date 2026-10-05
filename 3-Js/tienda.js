@@ -202,16 +202,31 @@ function agregarAlCarrito(num) {
 }
 
 /**
- * Descripción: Muestra los productos del carrito con sus precios formateados
- * y un botón para eliminar cada elemento. Actualiza el contador de unidades.
+ * Descripción: Agrupa los productos del carrito y muestra el precio unitario,
+ * la cantidad y el subtotal de cada producto. Calcula el total a pagar
+ * y actualiza los contadores de unidades.
  * @method mostrarCarrito
  */
 function mostrarCarrito() {
   const carrito = obtenerCarrito();
-  let contenido = "";
+  const cantidades = {};
 
-  carrito.forEach((num, posicion) => {
+  let contenido = "";
+  let total = 0;
+
+  // Cuenta cuántas unidades hay de cada producto.
+  carrito.forEach((num) => {
+    cantidades[num] = (cantidades[num] || 0) + 1;
+  });
+
+  // Genera una tarjeta por cada producto diferente.
+  Object.keys(cantidades).forEach((clave) => {
+    const num = Number(clave);
     const producto = productos[num];
+    const cantidad = cantidades[num];
+    const subtotal = producto.precio * cantidad;
+
+    total += subtotal;
 
     contenido += `
       <div>
@@ -224,13 +239,15 @@ function mostrarCarrito() {
 
         <p>${producto.description}</p>
 
-        <p>Precio: ${formatearPrecio(producto.precio)}</p>
+        <p>Precio unitario: ${formatearPrecio(producto.precio)}</p>
+        <p>Cantidad: ${cantidad}</p>
+        <p>Subtotal: ${formatearPrecio(subtotal)}</p>
 
         <button
           type="button"
-          onclick="eliminarProducto(${posicion})"
+          onclick="eliminarProducto(${num})"
         >
-          Eliminar producto
+          Eliminar una unidad
         </button>
       </div>
     `;
@@ -239,12 +256,18 @@ function mostrarCarrito() {
   document.getElementById("carrito").innerHTML =
     contenido || "<p>No hay productos en el carrito.</p>";
 
+  document.getElementById("cantidad-total").innerText =
+    carrito.length;
+
+  document.getElementById("total-pagar").innerText =
+    formatearPrecio(total);
+
   actualizarContador();
 }
 
 /**
  * Descripción: Vacía el carrito eliminándolo de localStorage
- * y actualiza su visualización.
+ * y actualiza los productos, las cantidades y el total mostrado.
  * @method vaciarCarrito
  */
 function vaciarCarrito() {
@@ -253,15 +276,20 @@ function vaciarCarrito() {
 }
 
 /**
- * Descripción: Elimina un elemento según su posición dentro del carrito,
- * guarda los cambios y actualiza su visualización.
+ * Descripción: Elimina una unidad del producto seleccionado del carrito,
+ * guarda los cambios y actualiza los productos, las cantidades y el total.
  * @method eliminarProducto
- * @param {number} posicion - La posición del elemento que se eliminará del carrito.
+ * @param {number} num - El índice del producto seleccionado en el arreglo de productos.
  */
-function eliminarProducto(posicion) {
+function eliminarProducto(num) {
   const carrito = obtenerCarrito();
 
-  carrito.splice(posicion, 1);
+  // Busca una unidad del producto dentro del carrito.
+  const posicion = carrito.indexOf(num);
+
+  if (posicion !== -1) {
+    carrito.splice(posicion, 1);
+  }
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
 
