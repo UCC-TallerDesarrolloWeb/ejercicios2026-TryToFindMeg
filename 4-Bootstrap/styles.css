@@ -1,0 +1,47 @@
+body {
+  background-color: #f5f5f5;
+  color: #212529;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 30px;
+}
+body h1 {
+  color: #6f42c1;
+  text-align: center;
+}
+body main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  color: #212529;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+.tarjeta h2 {
+  color: #6f42c1;
+  margin-top: 0;
+}
+.tarjeta p {
+  line-height: 1.6;
+}
+
+.aviso {
+  background-color: #6f42c1;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.aviso-secundario {
+  background-color: #198754;
+  color: #ffffff;
+  padding: 20px;
+  margin-top: 16px;
+  border-radius: 12px;
+}
+
+/*# sourceMappingURL=styles.css.map */

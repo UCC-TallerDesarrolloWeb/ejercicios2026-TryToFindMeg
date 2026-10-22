@@ -80,7 +80,7 @@
 -  [X] Youtube
 
 ### SASS
--  [ ] Sass básico
+-  [X] Sass básico
 -  [ ] Diseño de Interiores
 
 ## Unidad 6: Frameworks de JavaScript: React, Vue y Angular
