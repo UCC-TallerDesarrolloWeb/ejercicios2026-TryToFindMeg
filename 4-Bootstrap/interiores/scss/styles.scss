@@ -1,0 +1,146 @@
+@use "mobile";
+
+// Variables de colores.
+$color-principal: #ef7500;
+$color-texto: #222222;
+$color-blanco: #ffffff;
+$color-negro: #000000;
+$color-menu: #666666;
+
+// Estilos generales.
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: $color-blanco;
+    color: $color-texto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 3px solid #1769aa;
+    outline-offset: 5px;
+}
+
+.contenedor {
+    width: 80%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+// Encabezado y navegación.
+.encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px 0;
+
+    .logo {
+        width: 100px;
+        height: auto;
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: $color-menu;
+            font-size: 12px;
+
+            &:hover {
+                color: $color-principal;
+            }
+        }
+    }
+}
+
+// Sección de presentación.
+.bienvenida {
+    padding: 60px 10%;
+    background-color: $color-principal;
+    color: $color-blanco;
+
+    h1 {
+        margin: 0 0 24px;
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+    p {
+        max-width: 720px;
+        margin: 0 0 28px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .boton {
+        display: inline-block;
+        padding: 13px 22px;
+        background-color: $color-blanco;
+        color: $color-texto;
+        font-size: 13px;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #eeeeee;
+        }
+    }
+}
+
+// Portfolio: dos columnas sin separación entre imágenes.
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 36px 0;
+
+    img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1.8;
+        object-fit: cover;
+    }
+}
+
+// Pie de página.
+footer {
+    padding: 24px;
+    margin-bottom: 30px;
+    background-color: $color-negro;
+    color: $color-blanco;
+    text-align: center;
+    font-size: 12px;
+
+    p {
+        margin: 0 0 10px;
+    }
+
+    a {
+        color: $color-blanco;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Agrega los estilos móviles después de los de escritorio.
+@include mobile.estilos-mobile;
