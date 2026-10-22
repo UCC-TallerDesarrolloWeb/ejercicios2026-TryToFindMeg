@@ -1,0 +1,32 @@
+/* Define el ancho de la tarjeta y permite adaptarla a pantallas pequeñas. */
+.perfil-card {
+    width: 300px;
+    max-width: 100%;
+}
+
+/* Ajusta la portada sin deformar la imagen. */
+.perfil-portada {
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Superpone la foto de perfil sobre la portada. */
+.perfil-avatar {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin-top: -55px;
+    position: relative;
+}
+
+/* Mantiene los íconos del menú con el mismo tamaño y estilo. */
+.perfil-icono {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
