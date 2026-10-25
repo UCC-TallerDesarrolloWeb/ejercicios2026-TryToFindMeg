@@ -23,6 +23,7 @@
 -  [X] Tablas I
 -  [X] Tablas II
 -  [X] Tablas III
+-  [X] Tablas VI
 -  [X] Tablas IV
 -  [X] Comentarios
 -  [X] Formulario
@@ -73,15 +74,15 @@
 ## Unidad 5: Frameworks y Preprocesadores CSS
 
 ### BootStrap
--  [ ] Instagram
--  [ ] Componente para selección de vuelos
--  [ ] Timeline
--  [ ] Componente Perfil
--  [ ] Youtube
+-  [X] Instagram
+-  [X] Componente para selección de vuelos
+-  [X] Timeline
+-  [X] Componente Perfil
+-  [X] Youtube
 
 ### SASS
--  [ ] Sass básico
--  [ ] Diseño de Interiores
+-  [X] Sass básico
+-  [X] Diseño de Interiores
 
 ## Unidad 6: Frameworks de JavaScript: React, Vue y Angular
 -  [ ] Instalación de React Usando Vite

@@ -1,0 +1,5 @@
+// Aplica los colores de fondo y texto recibidos.
+@mixin aplicar-colores($fondo, $texto) {
+    background-color: $fondo;
+    color: $texto;
+}

@@ -1,0 +1,61 @@
+@use "variables";
+@use "mixins";
+
+body {
+    background-color: variables.$color-fondo;
+    color: variables.$color-texto;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 30px;
+
+    h1 {
+        color: variables.$color-principal;
+        text-align: center;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+.tarjeta {
+    @include mixins.aplicar-colores(
+        variables.$color-blanco,
+        variables.$color-texto
+    );
+
+    padding: 24px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+    h2 {
+        color: variables.$color-principal;
+        margin-top: 0;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+}
+
+.aviso {
+    @include mixins.aplicar-colores(
+        variables.$color-principal,
+        variables.$color-blanco
+    );
+
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.aviso-secundario {
+    @include mixins.aplicar-colores(
+        variables.$color-secundario,
+        variables.$color-blanco
+    );
+
+    padding: 20px;
+    margin-top: 16px;
+    border-radius: 12px;
+}

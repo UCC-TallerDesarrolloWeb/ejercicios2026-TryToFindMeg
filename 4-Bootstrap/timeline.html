@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        >
+
+        <title>Timeline de tareas</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        >
+
+        <link href="timeline.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <main class="container my-5">
+            <h1 class="visually-hidden">Timeline de tareas</h1>
+
+            <div
+                class="timeline-scroll"
+                role="region"
+                aria-label="Cronograma de enero y febrero"
+                tabindex="0"
+            >
+                <div class="timeline border">
+                    <!-- Cabecera con los meses y sus semanas -->
+                    <header class="bg-black text-white text-center">
+                        <div class="row g-0">
+                            <section class="col-6">
+                                <h2 class="fs-6 fw-bold py-2 mb-0">
+                                    Enero
+                                </h2>
+
+                                <div class="row g-0">
+                                    <div class="col border border-light">
+                                        Semana 1
+                                    </div>
+
+                                    <div class="col border border-light">
+                                        Semana 2
+                                    </div>
+
+                                    <div class="col border border-light">
+                                        Semana 3
+                                    </div>
+
+                                    <div class="col border border-light">
+                                        Semana 4
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section class="col-6">
+                                <h2 class="fs-6 fw-bold py-2 mb-0">
+                                    Febrero
+                                </h2>
+
+                                <div class="row g-0">
+                                    <div class="col border border-light">
+                                        Semana 1
+                                    </div>
+
+                                    <div class="col border border-light">
+                                        Semana 2
+                                    </div>
+
+                                    <div class="col border border-light">
+                                        Semana 3
+                                    </div>
+
+                                    <div class="col border border-light">
+                                        Semana 4
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </header>
+
+                    <!-- Tarjetas de tareas -->
+                    <div class="p-4">
+                        <div class="row g-0 mb-3">
+                            <article
+                                class="col-5 bg-secondary text-white rounded-2 p-2"
+                                aria-labelledby="tarea-1"
+                            >
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div>
+                                        <p class="text-info mb-1">
+                                            Completed
+                                        </p>
+
+                                        <h3
+                                            id="tarea-1"
+                                            class="fs-6 fw-bold mb-1"
+                                        >
+                                            Define Architecture
+                                        </h3>
+
+                                        <p class="opacity-50 mb-0">
+                                            20 Enero
+                                        </p>
+                                    </div>
+
+                                    <div
+                                        class="d-flex gap-1"
+                                        aria-label="Personas asignadas"
+                                    >
+                                        <span
+                                            class="avatar rounded-circle bg-light text-dark"
+                                            role="img"
+                                            aria-label="Ana"
+                                            title="Ana"
+                                        >
+                                            👩‍💼
+                                        </span>
+
+                                        <span
+                                            class="avatar rounded-circle bg-light text-dark"
+                                            role="img"
+                                            aria-label="Lucía"
+                                            title="Lucía"
+                                        >
+                                            👩‍💼
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="row g-0 mb-3">
+                            <article
+                                class="col-5 offset-3 bg-secondary text-white rounded-2 p-2"
+                                aria-labelledby="tarea-2"
+                            >
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div>
+                                        <p class="text-warning mb-1">
+                                            In Progress
+                                        </p>
+
+                                        <h3
+                                            id="tarea-2"
+                                            class="fs-6 fw-bold mb-1"
+                                        >
+                                            Define Architecture
+                                        </h3>
+
+                                        <p class="opacity-50 mb-0">
+                                            20 Enero
+                                        </p>
+                                    </div>
+
+                                    <div
+                                        class="d-flex gap-1"
+                                        aria-label="Personas asignadas"
+                                    >
+                                        <span
+                                            class="avatar rounded-circle bg-light text-dark"
+                                            role="img"
+                                            aria-label="Ana"
+                                            title="Ana"
+                                        >
+                                            👩‍💼
+                                        </span>
+
+                                        <span
+                                            class="avatar rounded-circle bg-light text-dark"
+                                            role="img"
+                                            aria-label="Lucía"
+                                            title="Lucía"
+                                        >
+                                            👩‍💼
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="row g-0">
+                            <article
+                                class="col-5 offset-5 bg-secondary text-white rounded-2 p-2"
+                                aria-labelledby="tarea-3"
+                            >
+                                <div
+                                    class="d-flex justify-content-between align-items-center gap-2"
+                                >
+                                    <div>
+                                        <p class="text-danger mb-1">
+                                            Blocked
+                                        </p>
+
+                                        <h3
+                                            id="tarea-3"
+                                            class="fs-6 fw-bold mb-1"
+                                        >
+                                            Define Architecture
+                                        </h3>
+
+                                        <p class="opacity-50 mb-0">
+                                            20 Enero
+                                        </p>
+                                    </div>
+
+                                    <div
+                                        class="d-flex gap-1"
+                                        aria-label="Personas asignadas"
+                                    >
+                                        <span
+                                            class="avatar rounded-circle bg-light text-dark"
+                                            role="img"
+                                            aria-label="Ana"
+                                            title="Ana"
+                                        >
+                                            👩‍💼
+                                        </span>
+
+                                        <span
+                                            class="avatar rounded-circle bg-light text-dark"
+                                            role="img"
+                                            aria-label="Lucía"
+                                            title="Lucía"
+                                        >
+                                            👩‍💼
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
