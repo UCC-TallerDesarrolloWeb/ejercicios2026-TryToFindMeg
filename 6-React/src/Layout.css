@@ -1,0 +1,84 @@
+.site-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-header {
+  padding: 1.25rem 1rem;
+  background-color: #0069ed;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.site-header nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-header a.active {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.site-header button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.site-header button:hover {
+  background-color: #0054bd;
+}
+
+.site-header a:focus-visible,
+.site-header button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+}
+
+.site-footer {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: #444;
+  background-color: #e3e3e3;
+}

@@ -1,3 +1,4 @@
+import { useOutletContext } from 'react-router-dom';
 import './Activities.css';
 
 const activities = [
@@ -24,12 +25,14 @@ const diasSemana = [
 ];
 
 function Activities() {
+  const { isLogin } = useOutletContext();
+
   function handleInscription(nombreActividad) {
     window.alert(`Inscripto en ${nombreActividad}`);
   }
 
   return (
-    <main className="activities-page">
+    <section className="activities-page">
       <h1>Actividades</h1>
       <div className="activities-container">
         {activities.map((activity) => (
@@ -43,13 +46,15 @@ function Activities() {
                 </li>
               ))}
             </ul>
-            <button type="button" onClick={() => handleInscription(activity.nombre)}>
-              Inscribir
-            </button>
+            {isLogin && (
+              <button type="button" onClick={() => handleInscription(activity.nombre)}>
+                Inscribir
+              </button>
+            )}
           </article>
         ))}
       </div>
-    </main>
+    </section>
   );
 }
 
