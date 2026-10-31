@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useOutletContext } from 'react-router-dom';
-import './styles/Login.scss';
+import '@styles/Login.scss';
 
 function Login() {
   const [username, setUsername] = useState('');

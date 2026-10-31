@@ -1,5 +1,5 @@
 import { useOutletContext } from 'react-router-dom';
-import './Activities.css';
+import '@styles/Activities.css';
 
 const activities = [
   {

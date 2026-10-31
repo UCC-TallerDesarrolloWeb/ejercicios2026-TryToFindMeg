@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import Layout from './Layout.jsx';
-import Home from './Home.jsx';
-import Login from './Login.jsx';
-import Activities from './Activities.jsx';
+import Layout from '@components/Layout.jsx';
+import Home from '@pages/Home.jsx';
+import Login from '@pages/Login.jsx';
+import Activities from '@pages/Activities.jsx';
 
 function App() {
   const [isLogin, setIsLogin] = useState(
