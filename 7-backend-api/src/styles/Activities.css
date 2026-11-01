@@ -1,0 +1,56 @@
+.activities-page {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.activities-page h1 {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.activities-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.activities-container ul {
+  padding-left: 1.25rem;
+  margin: 0 0 1.5rem;
+  line-height: 1.8;
+}
+
+.activities-container button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #0069ed;
+  color: white;
+  cursor: pointer;
+}
+
+.activities-container button:hover {
+  background-color: #0054bd;
+}
+
+.activities-container button:focus-visible {
+  outline: 2px solid #252525;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .activities-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.activities-message {
+  text-align: center;
+  line-height: 1.6;
+}
+
+.activities-error {
+  color: #b3261e;
+}
