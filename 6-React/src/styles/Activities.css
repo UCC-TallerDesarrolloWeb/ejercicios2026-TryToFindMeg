@@ -16,30 +16,13 @@
   gap: 1.5rem;
 }
 
-.activity-card {
-  padding: 1.5rem;
-  border: 1px solid #dedede;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.activity-card h2 {
-  margin: 0 0 0.75rem;
-  text-transform: capitalize;
-}
-
-.activity-card p {
-  margin: 0 0 1rem;
-}
-
-.activity-card ul {
+.activities-container ul {
   padding-left: 1.25rem;
   margin: 0 0 1.5rem;
   line-height: 1.8;
 }
 
-.activity-card button {
+.activities-container button {
   padding: 0.75rem 1rem;
   border: none;
   border-radius: 5px;
@@ -48,11 +31,11 @@
   cursor: pointer;
 }
 
-.activity-card button:hover {
+.activities-container button:hover {
   background-color: #0054bd;
 }
 
-.activity-card button:focus-visible {
+.activities-container button:focus-visible {
   outline: 2px solid #252525;
   outline-offset: 3px;
 }

@@ -90,7 +90,7 @@
 -  [X] Outlet
 -  [X] Estructura del Proyecto
 -  [X] Imágenes
--  [ ] Children
+-  [X] Children
 
 
 ## Unidad 7: Backend y APIs
