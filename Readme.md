@@ -85,13 +85,13 @@
 -  [X] Diseño de Interiores
 
 ## Unidad 6: Frameworks de JavaScript: React, Vue y Angular
--  [ ] Instalación de React Usando Vite
--  [ ] Login Básico
--  [ ] Redirección de Rutas
--  [ ] Outlet
--  [ ] Estructura del Proyecto
--  [ ] Imágenes
--  [ ] Children
+-  [X] Instalación de React Usando Vite
+-  [X] Login Básico
+-  [X] Redirección de Rutas
+-  [X] Outlet
+-  [X] Estructura del Proyecto
+-  [X] Imágenes
+-  [X] Children
 
 
 ## Unidad 7: Backend y APIs
