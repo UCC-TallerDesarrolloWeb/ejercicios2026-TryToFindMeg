@@ -1,0 +1,31 @@
+{
+  "fecha": "2026-11-02",
+  "herramienta": "Newman 6.2.3 - ejecutor de colecciones de Postman",
+  "metodo": "GET",
+  "url": "https://pokeapi.co/api/v2/pokemon/1",
+  "estado_http": 200,
+  "content_type": "application/json; charset=utf-8",
+  "pokemon": {
+    "id": 1,
+    "nombre": "bulbasaur",
+    "altura_dm": 7,
+    "peso_hg": 69
+  },
+  "comprobaciones": [
+    {
+      "nombre": "Respuesta HTTP 200 OK",
+      "resultado": "aprobada"
+    },
+    {
+      "nombre": "Contenido en formato JSON",
+      "resultado": "aprobada"
+    },
+    {
+      "nombre": "El recurso corresponde a Bulbasaur",
+      "resultado": "aprobada"
+    }
+  ],
+  "total_comprobaciones": 3,
+  "comprobaciones_fallidas": 0,
+  "coincide_con_consulta_inicial": true
+}
