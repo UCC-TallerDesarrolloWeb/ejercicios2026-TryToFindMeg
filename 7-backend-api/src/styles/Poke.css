@@ -1,6 +1,6 @@
 .poke-page {
   width: 100%;
-  max-width: 640px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -18,18 +18,29 @@
   color: #b3261e;
 }
 
+.poke-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1.5rem;
+}
+
+.poke-grid .card {
+  text-align: center;
+}
+
 .poke-card-details {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .poke-card-image {
   display: block;
   max-width: 100%;
   height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .poke-card-facts {
@@ -37,6 +48,7 @@
   grid-template-columns: auto auto;
   gap: 0.75rem 1.5rem;
   margin: 0;
+  text-align: left;
 }
 
 .poke-card-facts dt {

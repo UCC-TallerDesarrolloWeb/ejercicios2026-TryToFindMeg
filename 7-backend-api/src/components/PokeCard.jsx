@@ -1,8 +1,13 @@
 import Card from '@components/Card.jsx';
 
 const typeLabels = {
+  bug: 'Bicho',
+  fire: 'Fuego',
+  flying: 'Volador',
   grass: 'Planta',
+  normal: 'Normal',
   poison: 'Veneno',
+  water: 'Agua',
 };
 
 function PokeCard({ pokemon }) {
@@ -16,7 +21,14 @@ function PokeCard({ pokemon }) {
     <Card titulo={pokemon.name} subtitulo={types.join(' · ')}>
       <div className="poke-card-details">
         {image && (
-          <img className="poke-card-image" src={image} alt={pokemon.name} width="200" height="200" />
+          <img
+            className="poke-card-image"
+            src={image}
+            alt={pokemon.name}
+            width="160"
+            height="160"
+            loading="lazy"
+          />
         )}
         <dl className="poke-card-facts">
           <dt>Número</dt>

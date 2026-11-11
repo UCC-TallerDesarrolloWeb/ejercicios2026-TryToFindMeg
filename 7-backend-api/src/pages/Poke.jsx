@@ -2,26 +2,32 @@ import { useEffect, useState } from 'react';
 import PokeCard from '@components/PokeCard.jsx';
 import '@styles/Poke.css';
 
+const pokemonIds = Array.from({ length: 20 }, (_, index) => index + 1);
+
 function Poke() {
-  const [pokemon, setPokemon] = useState(null);
+  const [pokemonList, setPokemonList] = useState(null);
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const controller = new AbortController();
 
-    async function loadPokemon() {
+    async function loadPokemonList() {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/1', {
-          signal: controller.signal,
+        const requests = pokemonIds.map(async (id) => {
+          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`, {
+            signal: controller.signal,
+          });
+
+          if (!response.ok) {
+            throw new Error('La consulta a PokeAPI falló.');
+          }
+
+          return response.json();
         });
 
-        if (!response.ok) {
-          throw new Error('La consulta a PokeAPI falló.');
-        }
-
-        const data = await response.json();
+        const data = await Promise.all(requests);
         if (!controller.signal.aborted) {
-          setPokemon(data);
+          setPokemonList(data);
         }
       } catch {
         if (!controller.signal.aborted) {
@@ -30,16 +36,22 @@ function Poke() {
       }
     }
 
-    loadPokemon();
+    loadPokemonList();
     return () => controller.abort();
   }, []);
 
   return (
     <section className="poke-page">
       <h1>Pokémon</h1>
-      {!pokemon && !hasError && <p role="status">Cargando a Bulbasaur...</p>}
-      {hasError && <p role="alert">No se pudo cargar a Bulbasaur. Intentá recargar la página.</p>}
-      {pokemon && <PokeCard pokemon={pokemon} />}
+      {!pokemonList && !hasError && <p role="status">Cargando Pokémon...</p>}
+      {hasError && <p role="alert">No se pudieron cargar los Pokémon. Intentá recargar la página.</p>}
+      {pokemonList && (
+        <div className="poke-grid">
+          {pokemonList.map((pokemon) => (
+            <PokeCard key={pokemon.id} pokemon={pokemon} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
