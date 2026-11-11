@@ -99,7 +99,7 @@
 -  [X] Análisis de Pokeapi
 -  [X] APIs en React
 -  [X] APIs en React
--  [ ] Carrito
+-  [X] Carrito
 
 ## Unidad 8: Buenas prácticas en los desarrollos web
 

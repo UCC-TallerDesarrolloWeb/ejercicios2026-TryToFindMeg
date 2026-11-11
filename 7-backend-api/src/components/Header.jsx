@@ -14,6 +14,7 @@ function Header({ isLogin, onLogout }) {
           )}
           <NavLink to="/actividades">Actividades</NavLink>
           <NavLink to="/pokemon">Pokémon</NavLink>
+          <NavLink to="/tienda">Tienda</NavLink>
         </nav>
       </div>
     </header>

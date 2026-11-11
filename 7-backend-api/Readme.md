@@ -36,7 +36,7 @@ el servicio **get**.
 3. Crear un **Store.jsx** en */pages* que contenga .map para iterar y generar las cards
 4. Emplear una terminal para levantar el servidor:
 ```bash
-npx json-server --watch src/data/productos.json --port 4000
+npm run mock
 ```
 Y otra terminal para levantar el proyecto:
 ```bash

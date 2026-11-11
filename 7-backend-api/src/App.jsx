@@ -5,6 +5,7 @@ import Home from '@pages/Home.jsx';
 import Login from '@pages/Login.jsx';
 import Activities from '@pages/Activities.jsx';
 import Poke from '@pages/Poke.jsx';
+import Store from '@pages/Store.jsx';
 
 function App() {
   const [isLogin, setIsLogin] = useState(
@@ -33,6 +34,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="actividades" element={<Activities />} />
         <Route path="pokemon" element={<Poke />} />
+        <Route path="tienda" element={<Store />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

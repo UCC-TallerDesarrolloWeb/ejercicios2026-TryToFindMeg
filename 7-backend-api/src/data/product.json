@@ -1,0 +1,90 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nombre": "Cabezal Sparring",
+      "description": "Cabezal cerrado para sparring.",
+      "categoria": "Protectores",
+      "marca": "Gran Marc",
+      "talle": [
+        "1",
+        "2",
+        "3"
+      ],
+      "precio": 35000,
+      "imagen": "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/cabezal-cerrado.webp"
+    },
+    {
+      "id": 2,
+      "nombre": "Dobok Dan",
+      "description": "Dobok aprobado para torneos internacionales.",
+      "categoria": "Dobok",
+      "marca": "Daedo",
+      "talle": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "precio": 115000,
+      "imagen": "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/dobok.webp"
+    },
+    {
+      "id": 3,
+      "nombre": "Escudo de Potencia",
+      "description": "Escudo de potencia para entrenamientos.",
+      "categoria": "Entrenamiento",
+      "marca": "Gran Marc",
+      "talle": [
+        "s/talle"
+      ],
+      "precio": 51700,
+      "imagen": "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/escudo-potencia.webp"
+    },
+    {
+      "id": 4,
+      "nombre": "Par de focos redondos",
+      "description": "Par de focos de 25 × 25 cm para entrenamiento.",
+      "categoria": "Entrenamiento",
+      "marca": "Gran Marc",
+      "talle": [
+        "s/talle"
+      ],
+      "precio": 15000,
+      "imagen": "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/foco-con-dedos.webp"
+    },
+    {
+      "id": 5,
+      "nombre": "Guantes 10 onzas",
+      "description": "Guantes de sparring de 10 onzas habilitados para torneos internacionales.",
+      "categoria": "Protectores",
+      "marca": "Daedo",
+      "talle": [
+        "s/talle"
+      ],
+      "precio": 35000,
+      "imagen": "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-manos.webp"
+    },
+    {
+      "id": 6,
+      "nombre": "Protectores Pie",
+      "description": "Protectores de pie habilitados para torneos internacionales.",
+      "categoria": "Protectores",
+      "marca": "Daedo",
+      "talle": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "precio": 35000,
+      "imagen": "https://ucc-tallerdesarrolloweb.github.io/filminas/images/ejercicios/protectores-pie.webp"
+    }
+  ]
+}
