@@ -13,6 +13,7 @@ function Header({ isLogin, onLogout }) {
             <NavLink to="/login">Login</NavLink>
           )}
           <NavLink to="/actividades">Actividades</NavLink>
+          <NavLink to="/pokemon">Pokémon</NavLink>
         </nav>
       </div>
     </header>

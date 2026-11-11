@@ -97,7 +97,7 @@
 ## Unidad 7: Backend y APIs
 -  [X] Mock del Backend
 -  [X] Análisis de Pokeapi
--  [ ] APIs en React
+-  [X] APIs en React
 -  [ ] APIs en React
 -  [ ] Carrito
 
