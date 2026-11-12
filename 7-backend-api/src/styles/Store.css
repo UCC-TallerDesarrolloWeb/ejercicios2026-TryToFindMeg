@@ -1,0 +1,143 @@
+.store-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.store-page h1 {
+  margin: 0 0 1rem;
+}
+
+.store-page [role='alert'] {
+  color: #b3261e;
+}
+
+.store-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.store-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+}
+
+.store-products .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.store-products .card h2 {
+  font-size: 1.2rem;
+  text-transform: none;
+}
+
+.store-product-image {
+  width: 100%;
+  height: 10rem;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.store-price {
+  font-weight: bold;
+}
+
+.store-actions {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.store-button {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: #0069ed;
+  color: white;
+  padding: 0.65rem 0.8rem;
+  cursor: pointer;
+}
+
+.store-button:hover {
+  background: #0054bd;
+}
+
+.store-button-secondary {
+  border-color: #a8c9ef;
+  background: #edf5ff;
+  color: #064f9e;
+}
+
+.store-button-secondary:hover {
+  background: #dcecff;
+}
+
+.store-button:focus-visible {
+  outline: 2px solid #252525;
+  outline-offset: 3px;
+}
+
+.store-cart-items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-cart-items li {
+  border-bottom: 1px solid #dedede;
+  padding: 0 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.store-cart-items h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.store-cart-items p {
+  margin: 0 0 0.5rem;
+}
+
+.product-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.product-facts dt {
+  font-weight: bold;
+}
+
+.product-facts dd {
+  margin: 0;
+}
+
+.store-cart-summary dd {
+  text-align: right;
+}
+
+.product-detail {
+  width: min(32rem, calc(100% - 2rem));
+  border: 1px solid #dedede;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #252525;
+}
+
+.product-detail h2 {
+  margin: 0 0 1rem;
+}
+
+.product-detail::backdrop {
+  background: rgb(0 0 0 / 55%);
+}
+
+@media (max-width: 760px) {
+  .store-content {
+    grid-template-columns: 1fr;
+  }
+}
